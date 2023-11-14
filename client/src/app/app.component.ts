@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { tap } from 'rxjs/operators';
-import { IProduct } from './models/products';
+import { Product } from './models/products';
+import { Pagination } from './models/pagination';
 
 @Component({
   selector: 'app-root',
@@ -10,21 +10,18 @@ import { IProduct } from './models/products';
 })
 export class AppComponent implements OnInit {
   title = 'ZCommerce';
-  products: IProduct[] = [];
+  products: Product[] = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    const observer = {
-      next: (response: any) => this.products = response.data,
-      error: (error: any) => console.log(error),
-      complete: () => console.log('Completed')
-    };
-
-    this.http.get('http://localhost:5000/api/products?pageSize=50')
-      .pipe(
-        tap(observer)
-      )
-      .subscribe();
+    this.http.get<Pagination<Product[]>>('http://localhost:5000/api/products?pageSize=50').subscribe({
+      next: (response : any) => this.products = response.data, //next
+      error: error => console.log(error), //error
+      complete: () => {
+        console.log('request completed');
+        console.log('extra statement'); //completed
+      }
+    })
   }
 }
