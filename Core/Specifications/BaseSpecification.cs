@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace Core.Specifications
 {
     public class BaseSpecification<T> : ISpecification<T>
     {
-        public BaseSpecification() 
+        public BaseSpecification()
         {
         }
 
@@ -16,9 +15,10 @@ namespace Core.Specifications
             Criteria = criteria;
         }
 
-        public Expression<Func<T, bool>> Criteria { get; }
+        public Expression<Func<T, bool>> Criteria {get; }
 
-        public List<Expression<Func<T, object>>> Includes { get; } = new List<Expression<Func<T, object>>>();
+        public List<Expression<Func<T, object>>> Includes {get; } = 
+            new List<Expression<Func<T, object>>>();
 
         public Expression<Func<T, object>> OrderBy {get; private set;}
 
@@ -35,17 +35,18 @@ namespace Core.Specifications
             Includes.Add(includeExpression);
         }
 
-        protected void AddOrderBy(Expression<Func<T, object>> orderByExpression) 
+        protected void AddOrderBy(Expression<Func<T, object>> orderByExpression)
         {
             OrderBy = orderByExpression;
         }
 
-        protected void AddOrderByDescending(Expression<Func<T, object>> orderByDescExpression) 
+        protected void AddOrderByDescending(Expression<Func<T, object>> orderByDescExpression)
         {
             OrderByDescending = orderByDescExpression;
         }
 
-        protected void ApplyPaging(int skip, int take) {
+        protected void ApplyPaging(int skip, int take)
+        {
             Skip = skip;
             Take = take;
             IsPagingEnabled = true;
