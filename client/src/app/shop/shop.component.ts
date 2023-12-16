@@ -3,7 +3,7 @@ import { Product } from '../shared/models/products';
 import { ShopService } from './shop.service';
 import { Brand } from '../shared/models/brand';
 import { Type } from '../shared/models/type';
-import { ShopParams } from './shopParams';
+import { ShopParams } from '../shared/models/shopParams';
 
 @Component({
   selector: 'app-shop',

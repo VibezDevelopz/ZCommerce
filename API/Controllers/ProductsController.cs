@@ -1,10 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Infrastructure.Data;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
@@ -13,6 +10,7 @@ using AutoMapper;
 using API.Errors;
 using Microsoft.AspNetCore.Http;
 using API.Helpers;
+using System;
 
 namespace API.Controllers
 {

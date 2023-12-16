@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "Products",
+            "database": "${workspaceFolder:zcommerce}/API/zcommerce.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

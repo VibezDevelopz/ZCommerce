@@ -4,7 +4,7 @@ import { Pagination } from '../shared/models/pagination';
 import { Product } from '../shared/models/products';
 import { Brand } from '../shared/models/brand';
 import { Type } from '../shared/models/type';
-import { ShopParams } from './shopParams';
+import { ShopParams } from '../shared/models/shopParams';
 
 @Injectable({
   providedIn: 'root'
