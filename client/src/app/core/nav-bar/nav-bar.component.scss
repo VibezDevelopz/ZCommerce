@@ -29,6 +29,7 @@
     position: relative;
     color: 
     rgb(5, 135, 171);
+
   }
   
   .headings:after {
@@ -53,3 +54,14 @@
     transform-origin: bottom left;
   }
 
+  .logo {
+    cursor: pointer;
+  }
+
+.headings {
+  color: #343a40;
+
+  &.active {
+    color: rgb(0, 93, 164)
+  }
+}

@@ -6,13 +6,13 @@
           {{product.name}}
         </h6>
       </a>
-      <span class="mb-2">{{product.price | currency}}</span>
+      <span class="mb-2">{{product.price | currency:'GBP'}}</span>
       <div class="btn-group mt-auto">
         <button class="btn btn-outline-success">
           <i class="fa fa-cart-plus me-2" aria-hidden="false"></i>
         </button>
 
-        <button class="btn btn-outline-primary">View</button>
+        <button routerLink="/shop/{{product.id}}" class="btn btn-outline-primary">View</button>
       </div>
     </div>
   </div>

@@ -27,7 +27,9 @@
                     [pageNumber]="shopParams.pageNumber"
                     [pageSize]="shopParams.pageSize"
                 >                   
-                </app-paging-header>     
+                </app-paging-header>  
+                <span *ngIf="totalCount === 0">Sorry, we couldn't find anything about this!</span>
+
                 
                 <div class="d-flex mt-2">
                     <input (keyup.enter)="onSearch()" type="text" placeholder = "Search" class="form-control me-2" #search>
