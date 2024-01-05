@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row">
+    <div class="row" *ngIf="types.length > 0 && brands.length > 0">
         <section class="col-3">
             <h5 class="text-info ms-3 mt-2">Sort</h5>
             <select class="form-select mb-4" (change) = "onSortSelected($event)">
@@ -28,7 +28,8 @@
                     [pageSize]="shopParams.pageSize"
                 >                   
                 </app-paging-header>  
-                <span *ngIf="totalCount === 0">Sorry, we couldn't find anything about this!</span>
+                
+                
 
                 
                 <div class="d-flex mt-2">
@@ -37,7 +38,7 @@
                     <button (click)="onReset()" class="btn btn-outline-danger">Reset</button>
                 </div>
             </div>
-            <div class="row row-cols-3 g-3 mb-4">
+            <div class="row row-cols-3 g-3">
                 <div class="col" *ngFor = "let product of products">
                     <app-product-item [product] = "product"></app-product-item>
                 </div>
