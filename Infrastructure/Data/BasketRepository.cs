@@ -1,27 +1,27 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.Interfaces;
+using StackExchange.Redis;
 
 namespace Infrastructure.Data
 {
     public class BasketRepository : IBasketRepository
     {
-        public Task<bool> DeleteBasketAsync(string basketId)
+
+        Task<bool> IBasketRepository.DeleteBasketAsync(string basketId)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
-        public Task<CustomerBasket> GetBasketAsync(string basketId)
+        Task<CustomerBasket> IBasketRepository.GetBasketAsync(string basketId)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
-        public Task<CustomerBasket> UpdateBasketAsync(CustomerBasket basket)
+        Task<CustomerBasket> IBasketRepository.UpdateBasketAsync(CustomerBasket basket)
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
     }
 }
